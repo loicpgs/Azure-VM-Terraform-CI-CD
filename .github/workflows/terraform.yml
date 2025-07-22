@@ -1,3 +1,4 @@
+
 name: 🌍 Terraform Azure VM CI/CD
 
 on:
@@ -5,20 +6,21 @@ on:
     branches:
       - main
   pull_request:
+  workflow_dispatch:  # ✅ Déclenchement manuel via GitHub
 
 jobs:
   terraform:
-    name: 🚀 Terraform Init, Plan & Apply
+    name: 🚀 Terraform Init & Plan
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: ⚙️ Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.8.5
+          terraform_version: 1.7.5
 
       - name: 📦 Terraform Init
         run: terraform init
@@ -28,12 +30,3 @@ jobs:
 
       - name: 🧠 Terraform Plan
         run: terraform plan
-
-      - name: 🚀 Terraform Apply
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
-        env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
