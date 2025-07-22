@@ -1,0 +1,34 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+
+# Crash log files
+crash.log
+
+# Ignore override files as they are usually local
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# VS Code settings folder
+.vscode/
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac system files (au cas où)
+.DS_Store
+
+# Logs and temp files
+*.log
+*.bak
+*.swp
