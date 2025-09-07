@@ -33,46 +33,46 @@ Il vise à mettre en pratique les notions d’Infrastructure as Code (IaC) et de
 
 ## 🔧 Utilisation rapide
 
-1. Cloner le dépôt :
+### 1. Cloner le dépôt :###
 
 git clone https://github.com/loicpgs/Azure-VM-Terraform-CI-CD.git
 cd Azure-VM-Terraform-CI-CD
 
-2. Vérifier et modifier si besoin le fichier variables.tf (notamment la clé SSH)
+### 2. Vérifier et modifier si besoin le fichier variables.tf (notamment la clé SSH)
 
-3. Initialiser Terraform :
+### 3. Initialiser Terraform :
 
 terraform init
 
-4. Vérifier le plan de déploiement :
+### 4. Vérifier le plan de déploiement :
 
 terraform plan
 
-5. Appliquer le déploiement :
+### 5. Appliquer le déploiement :
 
 terraform apply
 
-⚙️ Pipeline CI/CD GitHub Actions
+## ⚙️ Pipeline CI/CD GitHub Actions
 
-*Le pipeline se déclenche à chaque push sur la branche main et exécute :
+**Le pipeline se déclenche à chaque push** sur la branche main et exécute :
 
-*terraform fmt -check : vérifie la mise en forme des fichiers Terraform
+**terraform fmt -check**: vérifie la mise en forme des fichiers Terraform
 
-*terraform init : initialise Terraform
+**terraform init** : initialise Terraform
 
-*terraform validate : valide la configuration Terraform
+**terraform validate** : valide la configuration Terraform
 
-*terraform plan : génère un plan de déploiement
+**terraform plan** : génère un plan de déploiement
 
-📚 Ressources utiles
+## 📚 Ressources utiles
 
-*Documentation Terraform Azure
+Documentation Terraform Azure
 
-*GitHub Actions
+GitHub Actions
 
-*Azure CLI
+Azure CLI
 
-*Tutoriel Terraform Azure (Microsoft Learn)
+Tutoriel Terraform Azure (Microsoft Learn)
 
 ✍️ Auteur
 
